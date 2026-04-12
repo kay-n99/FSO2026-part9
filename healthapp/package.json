@@ -1,0 +1,27 @@
+{
+  "name": "healthapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "calculateBmi": "tsc && node bmi/bmiCalculator.ts",
+    "calculateExercises": "tsc && node bmi/exerciseCalculator.ts",
+    "tsc": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kay-n99/FSO2026-part9.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kay-n99/FSO2026-part9/issues"
+  },
+  "homepage": "https://github.com/kay-n99/FSO2026-part9#readme",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.2"
+  }
+}

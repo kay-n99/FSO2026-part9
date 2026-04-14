@@ -51,11 +51,11 @@ const parseArguments = (args: string[]) => {
     return {
       target: Number(args[2]),
       hours: arr,
-    }
+    };
   } else {
     throw new Error('Provided values were not numbers!');
   }
-}
+};
 
 const {target, hours} = parseArguments(process.argv);
 

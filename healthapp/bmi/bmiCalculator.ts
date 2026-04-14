@@ -1,4 +1,4 @@
-const calculateBmi = (height: number, weight: number): string => {
+export const calculateBmi = (height: number, weight: number): string => {
   const heightInM = height / 100;
   const bmi = weight / (heightInM * heightInM);
 
@@ -12,6 +12,13 @@ const calculateBmi = (height: number, weight: number): string => {
   return "Obese (Class III)";
 };
 
-const height: number = Number(process.argv[2])
-const weight: number = Number(process.argv[3])
-console.log(calculateBmi(height, weight));
+if (process.argv[1] === import.meta.filename) {
+  const height: number = Number(process.argv[2]);
+  const weight: number = Number(process.argv[3]);
+
+  if (!isNaN(height) && !isNaN(weight)) {
+    console.log(calculateBmi(height, weight));
+  } else {
+    console.log("Please provide height and weight as arguments");
+  }
+}

@@ -29,16 +29,17 @@ app.get("/bmi", (req, res) => {
 });
 
 app.post("/exercises", (req, res) => {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assigment
   const { daily_exercises, target }: any = req.body;
 
-  if (!daily_exercises || target == undefined) {
+  if (!daily_exercises || target === undefined) {
     return res.status(400).send({ error: "parameters missing" });
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const hasInvalidExercisedaily_exercises =
-    !Array.isArray(daily_exercises) || daily_exercises.some((h: any) => isNaN(Number(h)));
+    !Array.isArray(daily_exercises) || 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    daily_exercises.some((h: any) => isNaN(Number(h)));
 
   if (isNaN(Number(target)) || hasInvalidExercisedaily_exercises) {
     return res.status(400).send({ error: "malformatted parameters" });

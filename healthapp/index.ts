@@ -29,7 +29,7 @@ app.get("/bmi", (req, res) => {
 });
 
 app.post("/exercises", (req, res) => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assigment
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-assignment
   const { daily_exercises, target }: any = req.body;
 
   if (!daily_exercises || target === undefined) {
